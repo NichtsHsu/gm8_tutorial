@@ -69,8 +69,8 @@ GM8 可以使用许多的数学函数，如：
 
 ![Length Dir](/assets/images/function/lengthdir.png)
 
-* `position_distance(x1, y1, x2, y2)` 返回坐标 (x1, y1) 与 (x2, y2) 的距离。
-* `position_direction(x1, y1, x2, y2)` 返回坐标 (x2, y2) 相对于 (x1, y1) 的角度。
+* `point_distance(x1, y1, x2, y2)` 返回坐标 (x1, y1) 与 (x2, y2) 的距离。
+* `point_direction(x1, y1, x2, y2)` 返回坐标 (x2, y2) 相对于 (x1, y1) 的角度。
 * `is_real(x)` 返回 x 是否为实数值。（返回 1 为实数值，返回 0 为字符串）
 * `is_string(x)` 返回 x 是否为字符串。（返回 1 为字符串，返回 0 为实数值）
 
