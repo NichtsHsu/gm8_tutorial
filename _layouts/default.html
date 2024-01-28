@@ -1,5 +1,5 @@
 ---
-layout: table_wrappers
+layout: refactor_content
 ---
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ layout: table_wrappers
         {% include components/breadcrumbs.html %}
         <div id="main-content" class="main-content">
           <main>
-            {% include refactor.html content=content %}
+            {{ content }}
 
             {% if page.has_children == true and page.has_toc != false %}
               {% include components/children_nav.html %}

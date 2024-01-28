@@ -176,8 +176,8 @@ figure.highlight {
 // {% highlight LANG linenos %}...{% endhighlight %}:
 
 // setting the spacing and scrollbar on the thirt level for the second case
-.highlight .table-wrapper {
-  padding: $sp-3 0;
+.highlight table {
+  padding: 0 0;
   margin: 0;
   border: 0;
   box-shadow: none;

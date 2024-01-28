@@ -33,17 +33,12 @@ td {
     border-left: 0;
   }
 }
-
 tbody {
   tr {
     &:last-of-type {
       th,
       td {
         border-bottom: 0;
-      }
-
-      td {
-        padding-bottom: $sp-3;
       }
     }
   }
