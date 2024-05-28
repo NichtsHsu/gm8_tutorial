@@ -178,23 +178,23 @@ textureTemp->UnlockRect(0);
 device->UpdateTexture(textureTemp, texture);
 ```
 
-`imageData` 是一个无符号整数的数组，总长度是 `width * height`，每一个整数代表一个像素，格式为 AGBR。你可以这样获取红，绿，蓝，透明度值：
+`imageData` 是一个无符号整数的数组，总长度是 `width * height`，每一个整数代表一个像素，格式为 ARGB。你可以这样获取红，绿，蓝，透明度值：
 
 ```cpp
-unsigned char red = imageData[i] & 0xFFU,
+unsigned char blue = imageData[i] & 0xFFU,
     green = (imageData[i] & 0xFF00U) >> 8,
-    blue = (imageData[i] & 0xFF0000U) >> 16,
+    read = (imageData[i] & 0xFF0000U) >> 16,
     alpha = (imageData[i] & 0xFF000000U) >> 24;
 ```
 
-注意，由于 C++ 整型使用小端储存，如果你将该指针强制转换为 `unsigned char *` 指针，那么图像数据的顺序就是 R, G, B, A。值得注意的是，C++ 计算位运算远远快过四则运算，因此下面的代码反而比上面的慢。
+注意，由于 C++ 整型使用小端储存，如果你将该指针强制转换为 `unsigned char *` 指针，那么图像数据的顺序就是 B, G, R, A。
 
 ```cpp
 unsigned char *imageData = reinterpret_cast<unsigned char *>(lock.pBits);
 ...
-unsigned char red = imageData[i * 4];
+unsigned char blue = imageData[i * 4];
     green = imageData[i * 4 + 1];
-    blue = imageData[i * 4 + 2];
+    read = imageData[i * 4 + 2];
     alpha = imageData[i * 4 + 3];
 ```
 
